@@ -4,10 +4,15 @@ fun main() {
     val intResult = getResult(100)
 
     // TODO 2
-    println()
+    println("String result: ${stringResult}")
+    println("Int result: ${intResult}")
 }
 
 // TODO 1
 fun <T> getResult(args: T): Int {
-    return 0
+    when(args){
+        is String -> return args.length
+        is Int -> return args*5
+        else -> return 0
+    }
 }
